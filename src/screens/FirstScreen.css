@@ -215,7 +215,7 @@
   }
 
   .ready-btn {
-    bottom: 8%;
+    bottom: 10%;
     padding: 0.85rem 2.2rem;
     font-size: 0.85rem;
   }
@@ -236,7 +236,7 @@
     font-size: 0.9rem;
   }
   .ready-btn {
-    bottom: 7%;
+    bottom: 10%;
     padding: 0.8rem 2rem;
   }
 }

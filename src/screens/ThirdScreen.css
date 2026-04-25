@@ -160,7 +160,7 @@
 /* ── NEXT BUTTON ── */
 .next-btn {
   position: absolute;
-  bottom: 6%;
+  bottom: 10%;
   right: 2.5rem;
   z-index: 10;
   font-family: 'DM Sans', 'Inter', sans-serif;
@@ -220,7 +220,7 @@
   }
 
   .next-btn {
-    bottom: 4%;
+    bottom: 8%;
     right: 1rem;
     padding: 0.75rem 1.8rem;
   }
