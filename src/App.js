@@ -9,7 +9,8 @@ import './App.css';
 
 const App = () => {
   const [scene, setScene] = useState(1);
-  const audioRef = useRef(null);
+  const audioRef    = useRef(null);
+  const musicStarted = useRef(false);
 
   useEffect(() => {
     const audio = new Audio('/dont-stop-believin.mp3');
@@ -22,8 +23,10 @@ const App = () => {
     };
   }, []);
 
-  const handleMusicStart = () => {
-    if (audioRef.current) {
+  // Called on the very first user click anywhere — guaranteed to work
+  const startMusic = () => {
+    if (!musicStarted.current && audioRef.current) {
+      musicStarted.current = true;
       audioRef.current.play().catch(() => {});
     }
   };
@@ -37,8 +40,8 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      {scene === 1 && <FirstScreen  onComplete={() => setScene(2)} onMusicStart={handleMusicStart} />}
+    <div className="App" onClick={startMusic}>
+      {scene === 1 && <FirstScreen  onComplete={() => setScene(2)} />}
       {scene === 2 && <SecondScreen onComplete={() => setScene(3)} />}
       {scene === 3 && <ThirdScreen  onComplete={() => setScene(4)} />}
       {scene === 4 && <FourthScreen onComplete={() => setScene(5)} />}
