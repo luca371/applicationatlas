@@ -24,12 +24,12 @@ const FourthScreen = ({ onComplete }) => {
   const [typing, setTyping]   = useState(false);
 
   const ACT1_TEXT = "So I asked Luka...\n\"Why Duane?\"";
-  const ACT2_TEXT = "When he was in Cluj and you were there to play — you were the only player who talked with him.\n\nNot as a fan. Not as a sponsor.\n\nAs a real person.\n\nLuka really wants you as his partner.";
+  const ACT2_TEXT = "When he was in Cluj and you were there to play - you were the only player who talked with him.\n\nNot as a fan. Not as a sponsor.\n\nAs a real person.\n\nLuka really wants you as his partner.";
   const ACT3_POINTS = [
-    { label: "Elite level", body: "Euroleague — kids already look up to you" },
+    { label: "Elite level", body: "Euroleague - kids already look up to you" },
     { label: "Huge reach", body: "Engaged social following that trusts you" },
     { label: "You give back", body: "Genuine connection to the next generation" },
-    { label: "You remember", body: "You're young — you remember the grind" },
+    { label: "You remember", body: "You're young - you remember the grind" },
   ];
 
   // typewriter
@@ -262,7 +262,7 @@ const FourthScreen = ({ onComplete }) => {
     <div className="fourth-screen">
       <div ref={mountRef} className="three-canvas" />
 
-      {/* ── ACT 1 — Why Duane ── */}
+      {/* ── ACT 1 - Why Duane ── */}
       {act === 1 && (
         <div className="center-panel">
           <div className="eyebrow">Why You, Duane?</div>
@@ -279,7 +279,7 @@ const FourthScreen = ({ onComplete }) => {
         </div>
       )}
 
-      {/* ── ACT 2 — Personal story ── */}
+      {/* ── ACT 2 - Personal story ── */}
       {act === 2 && (
         <div className="story-panel">
           <div className="tricky-dot-indicator" />
@@ -296,7 +296,7 @@ const FourthScreen = ({ onComplete }) => {
         </div>
       )}
 
-      {/* ── ACT 3 — Basketball reasons ── */}
+      {/* ── ACT 3 - Basketball reasons ── */}
       {act === 3 && (
         <div className="reasons-panel">
           <div className="tricky-dot-indicator" />
@@ -313,7 +313,7 @@ const FourthScreen = ({ onComplete }) => {
               >
                 <div className="reason-dot" />
                 <div>
-                  <span className="reason-label">{pt.label} — </span>
+                  <span className="reason-label">{pt.label} - </span>
                   <span className="reason-body">{pt.body}</span>
                 </div>
               </div>

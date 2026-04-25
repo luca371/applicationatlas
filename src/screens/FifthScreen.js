@@ -19,7 +19,7 @@ const FifthScreen = ({ onComplete }) => {
   const [showButton,   setShowButton]   = useState(false);
 
   const LINES = [
-    { label: 'Real Equity',   body: 'Ownership in Atlas — not a one-time fee' },
+    { label: 'Real Equity',   body: 'Ownership in Atlas - not a one-time fee' },
     { label: 'Your Time',     body: 'Post when it suits you. No pressure.' },
     { label: 'June 2026',     body: 'Platform is built. We just need you.' },
     { label: 'Global Reach',  body: 'Youth players from every country, day one.' },

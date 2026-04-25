@@ -209,7 +209,7 @@ const SixthScreen = () => {
       {/* Tricky label bottom */}
       <div className="tricky-credit">
         <div className="dot-mini" />
-        <span>Tricky & Luka — Atlas Basketball, 2026</span>
+        <span>Tricky & Luka - Atlas Basketball, 2026</span>
       </div>
 
       <div className="scene-label">06 / 06</div>
