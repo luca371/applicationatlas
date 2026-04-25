@@ -522,7 +522,7 @@ const SecondScreen = ({ onComplete }) => {
 
       {showBtn2 && (
         <button className="next-btn understood-btn" onClick={handleUnderstood}>
-          Understood. Show me. 🏀
+          Understood. Show me.
         </button>
       )}
 
