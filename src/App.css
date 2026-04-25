@@ -10,3 +10,32 @@ html, body, #root, .App {
   overflow: hidden;
   background: #050508;
 }
+
+/* ── GLOBAL BUTTON PULSE ── */
+/* Applies to all .next-btn and .ready-btn across every screen */
+.next-btn,
+.ready-btn,
+.understood-btn {
+  animation: btnAppear 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+             btnPulse 2.4s ease-in-out 1s infinite !important;
+}
+
+@keyframes btnPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 30px rgba(255, 95, 31, 0.4),
+      0 8px 30px rgba(255, 95, 31, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 55px rgba(255, 95, 31, 0.75),
+      0 12px 40px rgba(255, 95, 31, 0.5),
+      0 0 80px rgba(255, 95, 31, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes btnAppear {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}

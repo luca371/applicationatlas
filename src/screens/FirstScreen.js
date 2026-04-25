@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import './FirstScreen.css';
 
-const FirstScreen = ({ onComplete }) => {
+const FirstScreen = ({ onComplete, onMusicStart }) => {
   const mountRef       = useRef(null);
   const rendererRef    = useRef(null);
   const frameRef       = useRef(null);
@@ -40,7 +40,7 @@ const FirstScreen = ({ onComplete }) => {
   const [typedText,  setTypedText]  = useState('');
   const [showButton, setShowButton] = useState(false);
 
-  const FULL_TEXT = "Hi Duane! I'm Tricky \nLuka sent me to show you something special.\nAre you ready?";
+  const FULL_TEXT = "Hi Duane! I'm Tricky 👋\nLuka sent me to show you something special.\nAre you ready?";
   const LAND_Y    = 0;      // where the dot rests
   const START_Y   = 18;     // drop from here
   const DROP_DUR  = 1.6;    // seconds to fall
@@ -312,6 +312,7 @@ const FirstScreen = ({ onComplete }) => {
           phaseRef.current = 'landed';
           addEyes();
           setShowText(true);
+          if (onMusicStart) onMusicStart();
         }
       }
 
@@ -482,7 +483,7 @@ const FirstScreen = ({ onComplete }) => {
 
       {showButton && (
         <button className="ready-btn" onClick={handleReady}>
-          Yeah, I'm Ready
+          Yeah, I'm Ready 🏀
         </button>
       )}
 

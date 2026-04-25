@@ -16,30 +16,19 @@ const App = () => {
     audio.loop = true;
     audio.volume = 0.25;
     audioRef.current = audio;
-
-    // try autoplay, fallback to first interaction
-    const tryPlay = () => {
-      audio.play().catch(() => {
-        const onInteract = () => {
-          audio.play().catch(() => {});
-          window.removeEventListener('click', onInteract);
-          window.removeEventListener('keydown', onInteract);
-        };
-        window.addEventListener('click', onInteract);
-        window.addEventListener('keydown', onInteract);
-      });
-    };
-
-    tryPlay();
-
     return () => {
       audio.pause();
       audio.src = '';
     };
   }, []);
 
+  const handleMusicStart = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch(() => {});
+    }
+  };
+
   const handleFifthComplete = () => {
-    // stop music when Duane clicks "I want in"
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
@@ -49,7 +38,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {scene === 1 && <FirstScreen  onComplete={() => setScene(2)} />}
+      {scene === 1 && <FirstScreen  onComplete={() => setScene(2)} onMusicStart={handleMusicStart} />}
       {scene === 2 && <SecondScreen onComplete={() => setScene(3)} />}
       {scene === 3 && <ThirdScreen  onComplete={() => setScene(4)} />}
       {scene === 4 && <FourthScreen onComplete={() => setScene(5)} />}
